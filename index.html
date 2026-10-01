@@ -162,15 +162,15 @@
   <div class="fields">
 
     <input
-      type="text"
+     id="location"      type="text"
       placeholder="City, ZIP code, or neighborhood">
 
+    
     <input
-      type="number"
+      id="maxPrice"      type="number"
       placeholder="Max price">
 
-    <select>
-      <option>Any bedrooms</option>
+    <select id="bedrooms">      <option>Any bedrooms</option>
       <option>2+ bedrooms</option>
       <option>3+ bedrooms</option>
       <option>4+ bedrooms</option>
@@ -178,8 +178,7 @@
 
   </div>
 
-  <button onclick="alert('Home matching is coming next!')">
-    Find VA-Friendly Homes
+  <button onclick="findHomes()">    Find VA-Friendly Homes
   </button>
 
 </section>
@@ -213,5 +212,18 @@
 
 </section>
 
+<script>
+function findHomes() {
+  const location = document.getElementById("location").value;
+  const maxPrice = document.getElementById("maxPrice").value;
+  const bedrooms = document.getElementById("bedrooms").value;
+
+  alert(
+    "Searching " + location +
+    " up to $" + maxPrice +
+    (bedrooms ? " with " + bedrooms + "+ bedrooms" : "")
+  );
+}
+</script>
 </body>
 </html>
